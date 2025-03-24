@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/payment_dialog_bg"
+    android:padding="@dimen/_16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/please_enter_amount_below"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/paymentTypeLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/payment_type"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <LinearLayout
+        android:id="@+id/spinnerPaymentTypeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_weight="70"
+        android:background="@drawable/background_grey_border"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTypeLabelTextView">
+
+        <Spinner
+            android:id="@+id/paymentTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40dp"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/amountLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/amount"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPaymentTypeLayout" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:background="@drawable/background_grey_border"
+        android:fontFamily="sans-serif"
+        android:hint="@string/enter_amount"
+        android:inputType="numberDecimal"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountLabelTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/providerLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/provider_name"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_16sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/providerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:background="@drawable/background_grey_border"
+        android:fontFamily="sans-serif"
+        android:hint="@string/enter_provider_name"
+        android:inputType="text"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/providerLabelTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/transactionLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/transaction_reference"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_16sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/providerEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/transactionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:background="@drawable/background_grey_border"
+        android:fontFamily="sans-serif"
+        android:hint="@string/enter_transaction_reference"
+        android:inputType="text"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionLabelTextView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionEditText">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:layout_weight="1"
+            android:background="@drawable/save_button_background"
+            android:fontFamily="sans-serif"
+            android:text="@string/cancel"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/save_button_background"
+            android:fontFamily="sans-serif"
+            android:text="@string/ok"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
